@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Musa Beauty | Limpeza de Pele & Drenagem Linfática</title>
+  <meta name="description" content="Cuide da sua pele e do seu bem-estar com limpeza de pele profissional e drenagem linfática. Resultados visíveis desde a primeira sessão.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream:    #FAF6F1;
+      --warm:     #F2EBE0;
+      --blush:    #E8C9B8;
+      --rose:     #C49A84;
+      --deep:     #8B6352;
+      --sage:     #A8B5A2;
+      --charcoal: #3D3530;
+      --text:     #5C4A40;
+      --white:    #FFFFFF;
+      --gold:     #C9A96E;
+      --radius:   18px;
+      --shadow:   0 8px 40px rgba(139,99,82,0.10);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 6%;
+      background: rgba(250,246,241,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(196,154,132,0.15);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 30px rgba(139,99,82,0.10); }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 500;
+      color: var(--deep);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--rose); }
+
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.88rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--rose); }
+
+    .nav-cta {
+      background: var(--deep);
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: 50px;
+    }
+    .nav-cta:hover { background: var(--rose) !important; color: var(--white) !important; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--deep); border-radius: 2px; transition: 0.3s; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 6% 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,201,184,0.35) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -150px; left: -100px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(168,181,162,0.20) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 580px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 22px;
+    }
+    .hero-tag::before {
+      content: '';
+      display: block;
+      width: 28px; height: 1px;
+      background: var(--rose);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      color: var(--charcoal);
+      margin-bottom: 24px;
+      font-weight: 300;
+    }
+    .hero h1 em { font-style: italic; color: var(--rose); }
+
+    .hero p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--text);
+      max-width: 460px;
+      margin-bottom: 42px;
+    }
+
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--deep);
+      color: var(--white);
+      padding: 16px 34px;
+      border-radius: 50px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 4px 20px rgba(139,99,82,0.25);
+    }
+    .btn-primary:hover {
+      background: var(--rose);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(196,154,132,0.40);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--deep);
+      font-size: 0.92rem;
+      font-weight: 500;
+      text-decoration: none;
+      padding: 16px 0;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s, gap 0.3s;
+    }
+    .btn-secondary:hover { border-color: var(--rose); gap: 14px; }
+    .btn-secondary::after { content: '→'; font-size: 1rem; }
+
+    .hero-visual {
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 48%;
+      background:
+        linear-gradient(to bottom left, rgba(250,246,241,0.6), transparent 60%),
+        url('./assets/img-762beda554.jpg') center/cover no-repeat;
+      clip-path: polygon(8% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(196,154,132,0.25);
+    }
+    .stat h3 {
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--deep);
+    }
+    .stat p {
+      font-size: 0.82rem;
+      margin-bottom: 0;
+      color: var(--rose);
+      font-weight: 400;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── STRIP ── */
+    .strip {
+      background: var(--deep);
+      color: rgba(255,255,255,0.85);
+      padding: 18px 6%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      flex-wrap: wrap;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .strip-item { display: flex; align-items: center; gap: 10px; }
+    .strip-item svg { opacity: 0.7; }
+
+    /* ── SECTION BASE ── */
+    section { padding: 100px 6%; }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      color: var(--charcoal);
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--text);
+      max-width: 540px;
+      margin-bottom: 56px;
+    }
+
+    /* ── SERVICES ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .service-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      min-height: 560px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      cursor: pointer;
+      transition: transform 0.4s;
+    }
+    .service-card:hover { transform: translateY(-6px); }
+
+    .service-card .bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.6s;
+    }
+    .service-card:hover .bg { transform: scale(1.05); }
+
+    .service-card-1 .bg { background-image: url('./assets/img-46d38db303.jpg'); }
+    .service-card-2 .bg { background-image: url('./assets/img-f857c871f1.jpg'); }
+
+    .service-card .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(61,53,48,0.90) 0%, rgba(61,53,48,0.20) 55%, transparent 100%);
+    }
+
+    .service-card-content {
+      position: relative;
+      z-index: 2;
+      padding: 36px 36px 40px;
+      color: var(--white);
+    }
+
+    .service-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.30);
+      backdrop-filter: blur(6px);
+      border-radius: 50px;
+      padding: 5px 16px;
+      font-size: 0.75rem;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .service-card h3 {
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      font-size: 0.92rem;
+      font-weight: 300;
+      opacity: 0.88;
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blush);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: gap 0.3s, color 0.3s;
+    }
+    .service-link:hover { gap: 14px; color: var(--white); }
+    .service-link::after { content: '→'; }
+
+    /* ── BENEFITS ── */
+    .benefits { background: var(--warm); }
+
+    .benefits-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .benefits-visual {
+      border-radius: var(--radius);
+      height: 560px;
+      background: url('./assets/img-d298c828b1.jpg') center/cover no-repeat;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .benefits-visual::after {
+      content: '';
+      position: absolute;
+      bottom: -20px; right: -20px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: var(--blush);
+      z-index: -1;
+      opacity: 0.5;
+    }
+
+    .benefit-item {
+      display: flex;
+      gap: 18px;
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(196,154,132,0.20);
+    }
+    .benefit-item:last-child { border-bottom: none; }
+
+    .benefit-icon {
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      background: var(--blush);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+
+    .benefit-item h4 {
+      font-size: 1.1rem;
+      color: var(--charcoal);
+      margin-bottom: 4px;
+    }
+
+    .benefit-item p {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--text);
+    }
+
+    /* ── PROCESS ── */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      counter-reset: step;
+    }
+
+    .process-step {
+      padding: 32px 28px;
+      background: var(--white);
+      border-radius: var(--radius);
+      position: relative;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .process-step:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 60px rgba(139,99,82,0.14);
+    }
+    .process-step::before {
+      counter-increment: step;
+      content: '0' counter(step);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: rgba(196,154,132,0.25);
+      display: block;
+      margin-bottom: 20px;
+      line-height: 1;
+    }
+
+    .process-step h4 {
+      font-size: 1.2rem;
+      color: var(--charcoal);
+      margin-bottom: 10px;
+    }
+    .process-step p {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--text);
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { background: var(--charcoal); }
+
+    .testimonials .section-tag { color: var(--blush); }
+    .testimonials .section-title { color: var(--white); }
+    .testimonials .section-sub { color: rgba(255,255,255,0.55); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: var(--radius);
+      padding: 36px 30px;
+      transition: background 0.3s;
+    }
+    .testimonial-card:hover { background: rgba(255,255,255,0.10); }
+
+    .stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 20px;
+      color: var(--gold);
+      font-size: 1rem;
+    }
+
+    .testimonial-card p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.80);
+      font-style: italic;
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .author-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--blush);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--deep);
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .author-info h4 {
+      font-size: 0.95rem;
+      color: var(--white);
+      font-weight: 500;
+    }
+    .author-info span {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ── FAQ ── */
+    .faq-list { max-width: 720px; margin: 0 auto; }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(196,154,132,0.25);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0;
+      cursor: pointer;
+      text-align: left;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--charcoal);
+      font-weight: 400;
+      gap: 16px;
+      transition: color 0.3s;
+    }
+    .faq-question:hover { color: var(--rose); }
+
+    .faq-icon {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      border: 1px solid var(--blush);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+      color: var(--rose);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      background: var(--rose);
+      color: var(--white);
+      border-color: var(--rose);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 22px; }
+
+    .faq-answer p {
+      font-size: 0.92rem;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.80;
+    }
+
+    /* ── CTA ── */
+    .cta-section {
+      background: linear-gradient(135deg, var(--deep) 0%, var(--charcoal) 100%);
+      text-align: center;
+      padding: 110px 6%;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -200px; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 400px;
+      background: radial-gradient(ellipse, rgba(201,169,110,0.18), transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-section .section-tag { color: var(--gold); }
+    .cta-section h2 { color: var(--white); max-width: 560px; margin: 0 auto 18px; }
+    .cta-section p { color: rgba(255,255,255,0.60); max-width: 420px; margin: 0 auto 46px; font-weight: 300; }
+
+    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--charcoal);
+      padding: 18px 42px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 4px 24px rgba(201,169,110,0.35);
+    }
+    .btn-gold:hover {
+      background: #d4b47a;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 36px rgba(201,169,110,0.45);
+    }
+
+    .btn-outline-white {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.35);
+      color: var(--white);
+      padding: 18px 42px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 400;
+      text-decoration: none;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,0.10);
+      border-color: rgba(255,255,255,0.60);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--charcoal);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 56px 6% 32px;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand p {
+      font-size: 0.88rem;
+      font-weight: 300;
+      margin-top: 14px;
+      max-width: 280px;
+      line-height: 1.75;
+    }
+
+    .footer-col h5 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--white);
+      margin-bottom: 18px;
+      font-weight: 400;
+    }
+
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.3s;
+    }
+    .footer-col a:hover { color: var(--blush); }
+
+    .footer-bottom {
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.80rem;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .social-links { display: flex; gap: 14px; }
+    .social-link {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: background 0.3s, color 0.3s, border-color 0.3s;
+    }
+    .social-link:hover {
+      background: var(--rose);
+      color: var(--white);
+      border-color: var(--rose);
+    }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wpp-float {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 999;
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: pulse-wpp 2.5s infinite;
+    }
+    .wpp-float:hover {
+      transform: scale(1.10);
+      box-shadow: 0 8px 30px rgba(37,211,102,0.60);
+    }
+    @keyframes pulse-wpp {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45); }
+      50% { box-shadow: 0 4px 32px rgba(37,211,102,0.70), 0 0 0 10px rgba(37,211,102,0.10); }
+    }
+
+    /* ── FADE-IN ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 420px; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+      .testimonials-grid .testimonial-card:last-child { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 5%; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .hero {
+        padding: 100px 5% 60px;
+        flex-direction: column;
+      }
+      .hero-visual { display: none; }
+      .hero-content { max-width: 100%; }
+      .hero h1 { font-size: 2.4rem; }
+      .hero-stats { gap: 32px; }
+
+      .benefits-wrap { grid-template-columns: 1fr; }
+      .benefits-visual { height: 300px; }
+
+      .process-grid { grid-template-columns: 1fr; gap: 16px; }
+
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .testimonials-grid .testimonial-card:last-child { display: block; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+
+      .strip { gap: 24px; padding: 14px 5%; font-size: 0.75rem; }
+
+      section { padding: 72px 5%; }
+
+      #precos > div:last-child { grid-template-columns: 1fr !important; }
+      #localizacao > div { grid-template-columns: 1fr !important; }
+      #localizacao > div > div:last-child { min-height: 300px !important; }
+      #localizacao > div > div:last-child iframe { min-height: 300px !important; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2rem; }
+      .hero-btns { flex-direction: column; }
+      .cta-actions { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#inicio" class="nav-logo">Musa <span>Beauty</span> <small style="font-size:0.6em; font-weight:300; opacity:0.7; letter-spacing:0.04em;">por Carla Felício</small></a>
+    <ul class="nav-links">
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#precos">Preços</a></li>
+      <li><a href="#beneficios">Benefícios</a></li>
+      <li><a href="#processo">Como Funciona</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#localizacao">Localização</a></li>
+      <li><a href="#agendar" class="nav-cta">Agendar</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <div class="hero-tag">Studio Musa Beauty · por Carla Felício</div>
+      <h1>A sua pele merece<br><em>um cuidado especial</em></h1>
+      <p>Tratamentos estéticos personalizados para revelar a beleza que já existe em você. Limpeza de pele profissional e drenagem linfática que transformam sua rotina de cuidados.</p>
+      <div class="hero-btns">
+        <a href="#agendar" class="btn-primary">Agendar minha sessão</a>
+        <a href="#servicos" class="btn-secondary">Conhecer serviços</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <h3>500+</h3>
+          <p>Clientes atendidas</p>
+        </div>
+        <div class="stat">
+          <h3>98%</h3>
+          <p>Satisfação garantida</p>
+        </div>
+        <div class="stat">
+          <h3>8 anos</h3>
+          <p>De experiência</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual"></div>
+  </section>
+
+  <!-- STRIP -->
+  <div class="strip">
+    <div class="strip-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      Ambiente esterilizado
+    </div>
+    <div class="strip-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      Produtos dermatológicos
+    </div>
+    <div class="strip-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      Avaliação personalizada
+    </div>
+    <div class="strip-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      Agendamento fácil e rápido
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="servicos">
+    <div class="fade-up">
+      <span class="section-tag">Nossos serviços</span>
+      <h2 class="section-title">Dois tratamentos,<br>uma transformação completa</h2>
+      <p class="section-sub">Cada procedimento é realizado com técnica apurada, produtos de alta performance e total atenção ao seu tipo de pele.</p>
+    </div>
+
+    <div class="services-grid fade-up">
+      <!-- LIMPEZA DE PELE -->
+      <div class="service-card service-card-1">
+        <div class="bg"></div>
+        <div class="overlay"></div>
+        <div class="service-card-content">
+          <span class="service-badge">Tratamento facial completo</span>
+          <h3>Limpeza de Pele Completa</h3>
+          <p>Protocolo personalizado para o seu tipo de pele — da oleosa à sensível. Inclui <strong style="color:var(--blush);">vapor de ozônio</strong> para abertura dos poros, <strong style="color:var(--blush);">peeling de diamante</strong> para renovação celular, <strong style="color:var(--blush);">extração</strong> de cravos e impurezas, <strong style="color:var(--blush);">massagem facial</strong> relaxante e <strong style="color:var(--blush);">alta frequência</strong> para fechar os poros e tratar imperfeições — tudo que a sua pele está precisando, numa única sessão.</p>
+          <div style="display:flex; align-items:baseline; gap:12px; margin-bottom:22px; flex-wrap:wrap;">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:500; color:#fff; line-height:1;">R$ 150</div>
+            <div style="font-size:0.8rem; color:rgba(255,255,255,0.65);">à vista<br><span style="color:var(--blush); font-weight:500;">ou 2× R$ 80</span></div>
+          </div>
+          <a href="https://wa.me/5511933030785?text=Olá%20Carla!%20Quero%20agendar%20uma%20Limpeza%20de%20Pele%20Completa%20😊" class="service-link" target="_blank">Quero agendar</a>
+        </div>
+      </div>
+
+      <!-- DRENAGEM LINFÁTICA -->
+      <div class="service-card service-card-2">
+        <div class="bg"></div>
+        <div class="overlay"></div>
+        <div class="service-card-content">
+          <span class="service-badge">Tratamento corporal</span>
+          <h3>Drenagem Linfática Manual</h3>
+          <p>Uma sessão <strong style="color:var(--blush);">super relaxante</strong> que vai além da estética. Com manobras manuais suaves e precisas, estimulamos o sistema linfático para eliminar toxinas, reduzir o inchaço e desinchar o corpo de forma visível. Você sai mais leve, mais delineada e com aquela sensação gostosa de quem cuidou de si mesma de verdade. Ideal para retenção de líquidos, pós-operatório e bem-estar do dia a dia.</p>
+          <div style="display:flex; align-items:baseline; gap:12px; margin-bottom:22px; flex-wrap:wrap;">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:500; color:#fff; line-height:1;">R$ 120</div>
+            <div style="font-size:0.8rem; color:rgba(255,255,255,0.65);">à vista<br><span style="color:var(--blush); font-weight:500;">ou 2× R$ 65</span></div>
+          </div>
+          <a href="https://wa.me/5511933030785?text=Olá%20Carla!%20Quero%20agendar%20uma%20Drenagem%20Linfática%20😊" class="service-link" target="_blank">Quero agendar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="precos" style="background: var(--charcoal); padding: 80px 6%;">
+    <div class="fade-up" style="text-align:center; margin-bottom:52px;">
+      <span class="section-tag" style="color:var(--gold);">Investimento</span>
+      <h2 class="section-title" style="color:var(--white);">Preços transparentes,<br><em style="color:var(--blush);">resultado que você vê</em></h2>
+    </div>
+    <div class="fade-up" style="display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:860px; margin:0 auto;">
+
+      <!-- card limpeza -->
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10); border-radius:var(--radius); padding:40px 36px; position:relative; overflow:hidden;">
+        <div style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--rose),var(--blush));"></div>
+        <span style="font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--blush); font-weight:500;">Tratamento facial</span>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.55rem; color:var(--white); margin:10px 0 20px; font-weight:400;">Limpeza de Pele Completa</h3>
+        <ul style="list-style:none; margin-bottom:32px; display:flex; flex-direction:column; gap:9px;">
+          <li style="font-size:0.84rem; color:rgba(255,255,255,0.70); display:flex; align-items:center; gap:8px;"><span style="color:var(--rose);">✦</span> Vapor de ozônio</li>
+          <li style="font-size:0.84rem; color:rgba(255,255,255,0.70); display:flex; align-items:center; gap:8px;"><span style="color:var(--rose);">✦</span> Peeling de diamante</li>
+          <li style="font-size:0.84rem; color:rgba(255,255,255,0.70); display:flex; align-items:center; gap:8px;"><span style="color:var(--rose);">✦</span> Extração de cravos e impurezas</li>
+          <li style="font-size:0.84rem; color:rgba(255,255,255,0.70); display:flex; align-items:center; gap:8px;"><span style="color:var(--rose);">✦</span> Massagem facial relaxante</li>
+          <li style="font-size:0.84rem; color:rgba(255,255,255,0.70); display:flex; align-items:center; gap:8px;"><span style="color:var(--rose);">✦</span> Alta frequência</li>
+          <li style="font-size:0.84rem; color:rgba(255,255,255,0.70); display:flex; align-items:center; gap:8px;"><span style="color:var(--rose);">✦</span> Protocolo personalizado por tipo de pele</li>
+        </ul>
+        <div style="border-top:1px solid rgba(255,255,255,0.10); padding-top:24px; margin-bottom:28px;">
+          <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;">
+            <span style="font-family:'Cormorant Garamond',serif; font-size:2.8rem; color:var(--white); font-weight:500; line-height:1;">R$ 150</span>
+            <span style="font-size:0.82rem; color:rgba(255,255,255,0.45);">à vista</span>
+          </div>
+          <div style="font-size:0.88rem; color:var(--blush); font-weight:500;">ou 2× R$ 80 no cartão</div>
+        </div>
+        <a href="https://wa.me/5511933030785?text=Olá%20Carla!%20Quero%20agendar%20uma%20Limpeza%20de%20Pele%20Completa%20😊" target="_blank" class="btn-primary" style="display:block; text-align:center; background:var(--rose);">Agendar agora</a>
+      </div>
+
+      <!-- card drenagem -->
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10); border-radius:var(--radius); padding:40px 36px; position:relative; overflow:hidden;">
+        <div style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--sage),#c8d8c2);"></div>
+        <span style="font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--sage); font-weight:500;">Tratamento corporal</span>
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.55rem; color:var(--white); margin:10px 0 20px; font-weight:400;">Drenagem Linfática Manual</h3>
+        <ul style="list-style:none; margin-bottom:32px; display:flex; flex-direction:column; gap:9px;">
+          <li style="font-size:0.84rem; color:rgba(255,255,255,0.70); display:flex; align-items:center; gap:8px;"><span style="color:var(--sage);">✦</span> Manobras manuais especializadas</li>
+          <li style="font-size:0.84rem; color:rgba(255,255,255,0.70); display:flex; align-items:center; gap:8px;"><span style="color:var(--sage);">✦</span> Desincha e define o contorno</li>
+          <li style="font-size:0.84rem; color:rgba(255,255,255,0.70); display:flex; align-items:center; gap:8px;"><span style="color:var(--sage);">✦</span> Elimina toxinas e líquido retido</li>
+          <li style="font-size:0.84rem; color:rgba(255,255,255,0.70); display:flex; align-items:center; gap:8px;"><span style="color:var(--sage);">✦</span> Super relaxante — você sai renovada</li>
+          <li style="font-size:0.84rem; color:rgba(255,255,255,0.70); display:flex; align-items:center; gap:8px;"><span style="color:var(--sage);">✦</span> Indicado também para pós-operatório</li>
+          <li style="font-size:0.84rem; color:rgba(255,255,255,0.70); display:flex; align-items:center; gap:8px;"><span style="color:var(--sage);">✦</span> Melhora o sistema imunológico</li>
+        </ul>
+        <div style="border-top:1px solid rgba(255,255,255,0.10); padding-top:24px; margin-bottom:28px;">
+          <div style="display:flex; align-items:baseline; gap:10px; margin-bottom:6px;">
+            <span style="font-family:'Cormorant Garamond',serif; font-size:2.8rem; color:var(--white); font-weight:500; line-height:1;">R$ 120</span>
+            <span style="font-size:0.82rem; color:rgba(255,255,255,0.45);">à vista</span>
+          </div>
+          <div style="font-size:0.88rem; color:var(--sage); font-weight:500;">ou 2× R$ 65 no cartão</div>
+        </div>
+        <a href="https://wa.me/5511933030785?text=Olá%20Carla!%20Quero%20agendar%20uma%20Drenagem%20Linfática%20😊" target="_blank" class="btn-primary" style="display:block; text-align:center; background:var(--sage); color:var(--charcoal);">Agendar agora</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="benefits" id="beneficios">
+    <div class="benefits-wrap">
+      <div class="benefits-visual fade-up"></div>
+
+      <div class="fade-up">
+        <span class="section-tag">Por que escolher</span>
+        <h2 class="section-title">Resultados que você<br><em>realmente sente</em></h2>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">✨</div>
+          <div>
+            <h4>Pele visivelmente mais limpa</h4>
+            <p>A limpeza de pele remove impurezas profundas que a higiene diária não alcança, devolvendo brilho e uniformidade à sua pele.</p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">💧</div>
+          <div>
+            <h4>Redução de inchaço e retenção</h4>
+            <p>A drenagem linfática estimula o sistema linfático, eliminando toxinas e líquidos retidos, melhorando o contorno corporal.</p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">🌿</div>
+          <div>
+            <h4>Bem-estar e relaxamento profundo</h4>
+            <p>Além dos resultados estéticos, nossos tratamentos promovem relaxamento muscular e redução do estresse de forma imediata.</p>
+          </div>
+        </div>
+
+        <div class="benefit-item">
+          <div class="benefit-icon">🎯</div>
+          <div>
+            <h4>Protocolo 100% personalizado</h4>
+            <p>Cada sessão começa com uma avaliação do seu tipo de pele e necessidades para garantir o melhor resultado possível.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="processo">
+    <div class="fade-up" style="text-align: center; max-width: 600px; margin: 0 auto 56px;">
+      <span class="section-tag">Como funciona</span>
+      <h2 class="section-title">Do agendamento<br>à sua transformação</h2>
+      <p class="section-sub" style="margin: 0 auto;">Um processo simples, acolhedor e totalmente pensado para o seu conforto e resultado.</p>
+    </div>
+
+    <div class="process-grid fade-up">
+      <div class="process-step">
+        <h4>Agendamento</h4>
+        <p>Escolha o horário que melhor funciona para você pelo WhatsApp ou pelo nosso formulário online. Rápido e sem complicação.</p>
+      </div>
+      <div class="process-step">
+        <h4>Avaliação inicial</h4>
+        <p>Na chegada, realizamos uma avaliação completa da sua pele ou necessidades corporais para personalizar cada etapa do tratamento.</p>
+      </div>
+      <div class="process-step">
+        <h4>Aplicação do protocolo</h4>
+        <p>Com técnica especializada e produtos selecionados, cada etapa do tratamento é realizada com atenção e cuidado total.</p>
+      </div>
+      <div class="process-step">
+        <h4>Orientações e acompanhamento</h4>
+        <p>Ao finalizar, você recebe orientações de cuidados para casa e um plano de sessões para potencializar ainda mais seus resultados.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="depoimentos">
+    <div class="fade-up" style="text-align: center; max-width: 600px; margin: 0 auto 56px;">
+      <span class="section-tag">Depoimentos</span>
+      <h2 class="section-title">O que nossas clientes<br>estão dizendo</h2>
+      <p class="section-sub" style="margin: 0 auto; color: rgba(255,255,255,0.55);">Resultados reais de pessoas reais que confiaram em nossos cuidados.</p>
+    </div>
+
+    <div class="testimonials-grid fade-up">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Fiz a limpeza de pele e me arrependo de não ter ido antes! Minha pele ficou incrível, os cravos sumiram e o brilho voltou. O atendimento é maravilhoso, muito acolhedor e profissional."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">A</div>
+          <div class="author-info">
+            <h4>Ana Luiza</h4>
+            <span>Cliente há 2 anos</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"A drenagem linfática mudou minha vida! Fiz um pós-operatório muito mais tranquilo graças às sessões. Reduziu o inchaço rapidíssimo e me ajudou a me sentir muito mais leve e confiante."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">F</div>
+          <div class="author-info">
+            <h4>Fernanda Costa</h4>
+            <span>Pós-operatório</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p>"Faço limpeza de pele todo mês e é o melhor investimento que faço em mim mesma. Minha pele nunca esteve tão equilibrada. A profissional é extremamente atenciosa e habilidosa!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">J</div>
+          <div class="author-info">
+            <h4>Juliana Martins</h4>
+            <span>Cliente fiel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="fade-up" style="text-align: center; max-width: 600px; margin: 0 auto 56px;">
+      <span class="section-tag">Dúvidas frequentes</span>
+      <h2 class="section-title">Tudo que você precisa<br>saber antes de vir</h2>
+    </div>
+
+    <div class="faq-list fade-up">
+      <div class="faq-item">
+        <button class="faq-question">
+          Com que frequência devo fazer a limpeza de pele?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Para peles normais a mistas, o ideal é a cada 30 a 45 dias. Peles oleosas podem se beneficiar de sessões a cada 20 dias. Peles secas ou sensíveis geralmente mantêm o intervalo de 45 a 60 dias. Na sua primeira visita, indicaremos o cronograma ideal para o seu tipo de pele.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          A limpeza de pele dói?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>O procedimento pode gerar algum desconforto na etapa de extração de cravos e poros, mas é completamente tolerável. Trabalhamos com técnicas suaves e produtos calmantes para tornar a experiência o mais confortável possível. Você pode nos avisar a qualquer momento se precisar de uma pausa.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Quem pode fazer drenagem linfática?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>A drenagem linfática é indicada para praticamente todos os perfis: inchaço, retenção de líquidos, pós-operatório, gestantes (a partir do 2º trimestre com liberação médica), atletas e quem busca relaxamento geral. Algumas condições de saúde exigem avaliação prévia — entre em contato conosco para esclarecer sua situação.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Quantas sessões de drenagem linfática preciso?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Para retenção de líquidos leve, já é possível notar diferença em 3 a 5 sessões. Para casos de pós-operatório ou edemas mais intensos, recomendamos sessões diárias nas primeiras semanas, seguidas de manutenção quinzenal. Avaliamos cada caso individualmente para montar o protocolo ideal.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Como faço para agendar minha sessão?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>É super simples! Clique no botão "Agendar minha sessão" ou fale diretamente com a gente pelo WhatsApp. Respondemos rapidinho e encontramos o horário perfeito para você. Atendemos de segunda a sábado, das 8h às 19h.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALIZACAO -->
+  <section id="localizacao" style="padding: 0; background: var(--warm);">
+    <div style="display: grid; grid-template-columns: 1fr 1fr;">
+      <div style="padding: 72px 6%; display: flex; flex-direction: column; justify-content: center;">
+        <span class="section-tag">Onde estamos</span>
+        <h2 class="section-title" style="margin-bottom: 20px;">Fácil de chegar,<br><em>difícil de esquecer</em></h2>
+        <p style="font-size: 0.95rem; font-weight: 300; color: var(--text); margin-bottom: 28px;">
+          Estamos localizadas no Jardim Virgínia Bianca, em São Paulo. Um espaço pensado para que você chegue e já sinta o acolhimento que merece.
+        </p>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="width: 38px; height: 38px; border-radius: 10px; background: var(--blush); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem;">📍</div>
+            <div>
+              <strong style="display: block; font-size: 0.9rem; color: var(--charcoal); font-weight: 500;">Endereço</strong>
+              <span style="font-size: 0.88rem; font-weight: 300; color: var(--text);">R. Antônio Luís Saião, 101 — Jardim Virgínia Bianca<br>São Paulo – SP</span>
+            </div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="width: 38px; height: 38px; border-radius: 10px; background: var(--blush); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem;">🕐</div>
+            <div>
+              <strong style="display: block; font-size: 0.9rem; color: var(--charcoal); font-weight: 500;">Horário de atendimento</strong>
+              <span style="font-size: 0.88rem; font-weight: 300; color: var(--text);">Segunda a Sábado, das 8h às 19h</span>
+            </div>
+          </div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="width: 38px; height: 38px; border-radius: 10px; background: var(--blush); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem;">✉️</div>
+            <div>
+              <strong style="display: block; font-size: 0.9rem; color: var(--charcoal); font-weight: 500;">E-mail</strong>
+              <a href="mailto:contato@carlafelicio.com.br" style="font-size: 0.88rem; font-weight: 300; color: var(--rose); text-decoration: none;">contato@carlafelicio.com.br</a>
+            </div>
+          </div>
+        </div>
+        <a href="https://maps.google.com/?q=Rua+Antonio+Luis+Saiao,+101,+Jardim+Virginia+Bianca,+São+Paulo+SP" target="_blank" class="btn-primary" style="align-self: flex-start;">
+          Abrir no Google Maps
+        </a>
+      </div>
+      <div style="min-height: 480px;">
+        <iframe
+          src="https://maps.google.com/maps?q=Rua+Antonio+Luis+Saiao,+101,+Jardim+Virginia+Bianca,+Sao+Paulo,+SP,+Brasil&output=embed&hl=pt-BR"
+          width="100%" height="100%" style="border: 0; display: block; min-height: 480px;"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Localização Studio Musa Beauty">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="agendar">
+    <div class="fade-up">
+      <span class="section-tag">Pronta para começar?</span>
+      <h2 class="section-title">Dê o primeiro passo para<br>uma pele renovada</h2>
+      <p>Agende agora sua avaliação gratuita e descubra o protocolo ideal para você. Vagas limitadas!</p>
+
+      <div class="cta-actions">
+        <a href="https://wa.me/5511933030785?text=Olá!%20Quero%20agendar%20uma%20sessão" class="btn-gold" target="_blank">
+          Agendar pelo WhatsApp
+        </a>
+        <a href="tel:+5511933030785" class="btn-outline-white">
+          Ligar agora
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: white; font-weight: 500;">Musa <span style="color: #C49A84;">Beauty</span></div>
+        <div style="font-size: 0.78rem; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; margin-top: 2px; margin-bottom: 12px;">por Carla Felício</div>
+        <p>Cuidados estéticos com técnica, carinho e resultado real. Um espaço criado para você se sentir linda por dentro e por fora.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Serviços</h5>
+        <ul>
+          <li><a href="#servicos">Limpeza de Pele</a></li>
+          <li><a href="#servicos">Drenagem Linfática</a></li>
+          <li><a href="#processo">Como Funciona</a></li>
+          <li><a href="#agendar">Agendar Sessão</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contato</h5>
+        <ul>
+          <li><a href="https://wa.me/5511933030785">WhatsApp</a></li>
+          <li><a href="tel:+5511933030785">(11) 93303-0785</a></li>
+          <li><a href="mailto:contato@carlafelicio.com.br">contato@carlafelicio.com.br</a></li>
+          <li><a href="#">Seg–Sáb, 8h–19h</a></li>
+          <li><a href="https://maps.google.com/?q=Rua+Antonio+Luis+Saiao,+101,+Jardim+Virginia+Bianca,+São+Paulo+SP" target="_blank">R. Antônio Luís Saião, 101<br>Jd. Virgínia Bianca – SP</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Studio Musa Beauty por Carla Felício. Todos os direitos reservados.</span>
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="Instagram">in</a>
+        <a href="#" class="social-link" aria-label="Facebook">f</a>
+        <a href="#" class="social-link" aria-label="TikTok">t</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/5511933030785?text=Olá!%20Quero%20saber%20mais%20sobre%20os%20serviços" class="wpp-float" target="_blank" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script>
+    // Nav scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // Intersection Observer for fade-up
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Hamburger (mobile) — simple toggle de exibição
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      const open = navLinks.style.display === 'flex';
+      navLinks.style.cssText = open
+        ? ''
+        : 'display:flex; flex-direction:column; position:absolute; top:70px; left:0; right:0; background:rgba(250,246,241,0.98); padding:24px 6%; gap:20px; border-bottom:1px solid rgba(196,154,132,0.2); backdrop-filter:blur(12px);';
+    });
+
+    // Fechar menu ao clicar em link
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => { navLinks.style.cssText = ''; });
+    });
+  </script>
+</body>
+</html>
